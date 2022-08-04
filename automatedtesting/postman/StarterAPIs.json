@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "657fc7cd-7a6e-4c5b-8d7f-9e1dece87ffc",
+		"name": "Starter APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful response\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							"var json = pm.response.json();",
+							"pm.environment.set(\"id\", json.data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/{{post_api_path}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{post_api_path}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful response\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"success\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/{{get_api_path}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"{{get_api_path}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
