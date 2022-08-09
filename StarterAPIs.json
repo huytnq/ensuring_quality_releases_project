@@ -35,12 +35,17 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/{{post_api_path}}",
+					"raw": "https://web-appservice-web.azurewebsites.net/api/v1/create",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"web-appservice-web",
+						"azurewebsites",
+						"net"
 					],
 					"path": [
-						"{{post_api_path}}"
+						"api",
+						"v1",
+						"create"
 					]
 				}
 			},
@@ -66,12 +71,17 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/{{get_api_path}}",
+					"raw": "https://web-appservice-web.azurewebsites.net/api/v1/employees",
+					"protocol": "https",
 					"host": [
-						"{{url}}"
+						"web-appservice-web",
+						"azurewebsites",
+						"net"
 					],
 					"path": [
-						"{{get_api_path}}"
+						"api",
+						"v1",
+						"employees"
 					]
 				}
 			},
