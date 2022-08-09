@@ -136,7 +136,7 @@ stages:
               script: |
                 # Run selenium
                 
-                git clone https://HuyTNQ1:7fyuuljzptjm5m4vuy4nfjpgy56pim4hlkrnmqbwfeihn23darjq@dev.azure.com/HuyTNQ1/udacity_project3_ensuring_quality_releases/_git/udacity_project3_ensuring_quality_releases
+                git clone https://github.com/huytnq/ensuring_quality_releases_project.git
                 cd udacity_project3_ensuring_quality_releases/
                 git pull
                 cd automatedtesting/selenium
