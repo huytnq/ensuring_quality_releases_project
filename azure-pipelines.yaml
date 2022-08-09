@@ -19,8 +19,8 @@ stages:
     # Needed for Terraform VM deployment
     - task: InstallSSHKey@0
       inputs:
-        knownHostsEntry: '~/.ssh/id_rsa.pub'
-        sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFtZdtHxlP5HqadJdoiIKOERXfI34W1RAN2JMss2S8dhzZdlatt8acW90PCJf+nSrMQCP6VrExA6xr857vNAq+Ho7cxrlz0UTz/3J853XUSLUatgjtFbLhA3eWKCCbrwfUmk6wlWKuQJpr+b/48Pq/tUOUcxxe+W5anwX+iP55t8K4eTQHGYJzbjyVKpkn/zWNhPqiF3/Hw8uvzQ9OgtR3N7x+rVvEj2AlWsYImvECG7KWlX1VNQ9jSj6Vldf61zLCTgzqQFbwfON7VPxxrfg77HZJUwbRfv2L8Xhv6Doke1Agkyw0O7X+5s2xZngEV6As/gDBUeDXuk436lmu61wZEUM8rMH9mDi4lrhzVALJUDZLt6IkoE59cc4oFgar24pxG9XrNmi8LnEjdHJLbzJXENcg++N7sPOv6uDEQKz6ScFkzShhEXIU5deMX8UPT2ftQG12UylIKOP+3Ut2Tb+zNx3GIRtQZGG+zetbcua5xDwnS4f8P563cYmzRpOyQ8U= ngvba@UshioMini'
+        knownHostsEntry: '.ssh/id_rsa.pub'
+        sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8CrqP6Rpq3Bg3CBKepD+9d0CduFpjn6m4S3qh+5bB3NnEpv9j9I5IXuoWbbGSpFDLGn42qcIm4KGaZoUmg48eCkSZrdHCOZVBF+qrYVDzPOWkIIIbzpfnEWN4bIUVZcQSRt80iBe5vR0o6XXSxK9PDqucflD1hjbgl8ZsWDNDnI23jc0H/dp9EsjmiYW+fQgbgUQroW7wX94MFX0NOILAY+R63JrMNr2TWglbww6+N0zSAFrnJPH/dObzCuyo8djBpVflIauF6f5osP/qlJuIpGKJ2oA1pfGDgc8XJNzPZtorr+yMzlIOtDSZYJmp1tqJTEw6Ki0RTHDuAKv0/Zp3fOX1w0Tr/DZOL+4Fhl+AaYmI8gx5nXQOQDsuB1tmG/w/bWclWdct3m3VlaLE9qIIDGuEuEEEVE/okb0cE2vT8bgzyGLqpTgFKAkklFs6axJQo2DxVCqAz0y/J13iUwQkKDkRQcj1nO6qCsUQ+58z9CTWyB+rjLrdLdLBDZ2A2qE= admins@DESKTOP-K32FQ05'
         sshKeySecureFile: 'id_rsa'
     - task: ArchiveFiles@2
       displayName: 'Archive FakeRestAPI'
@@ -74,7 +74,7 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: 'Azure for Students (4c298133-8bec-4ca0-94e5-9c0ba696cc54)'
+              azureSubscription: 'Azure subscription 1(32bee463-1a01-463c-8760-52350742cd79)'
               appType: 'webApp'
               appName: 'web-AppService-web'
               package: '$(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip'
@@ -136,8 +136,8 @@ stages:
               script: |
                 # Run selenium
                 
-                git clone https://github.com/ngvbach2000/Project-Starter-Resources.git
-                cd Project-Starter-Resources
+                git clone https://HuyTNQ1:7fyuuljzptjm5m4vuy4nfjpgy56pim4hlkrnmqbwfeihn23darjq@dev.azure.com/HuyTNQ1/udacity_project3_ensuring_quality_releases/_git/udacity_project3_ensuring_quality_releases
+                cd udacity_project3_ensuring_quality_releases/
                 git pull
                 cd automatedtesting/selenium
                 python3 login.py
