@@ -23,7 +23,7 @@ stages:
         sshPublicKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC8CrqP6Rpq3Bg3CBKepD+9d0CduFpjn6m4S3qh+5bB3NnEpv9j9I5IXuoWbbGSpFDLGn42qcIm4KGaZoUmg48eCkSZrdHCOZVBF+qrYVDzPOWkIIIbzpfnEWN4bIUVZcQSRt80iBe5vR0o6XXSxK9PDqucflD1hjbgl8ZsWDNDnI23jc0H/dp9EsjmiYW+fQgbgUQroW7wX94MFX0NOILAY+R63JrMNr2TWglbww6+N0zSAFrnJPH/dObzCuyo8djBpVflIauF6f5osP/qlJuIpGKJ2oA1pfGDgc8XJNzPZtorr+yMzlIOtDSZYJmp1tqJTEw6Ki0RTHDuAKv0/Zp3fOX1w0Tr/DZOL+4Fhl+AaYmI8gx5nXQOQDsuB1tmG/w/bWclWdct3m3VlaLE9qIIDGuEuEEEVE/okb0cE2vT8bgzyGLqpTgFKAkklFs6axJQo2DxVCqAz0y/J13iUwQkKDkRQcj1nO6qCsUQ+58z9CTWyB+rjLrdLdLBDZ2A2qE= admins@DESKTOP-K32FQ05'
         sshKeySecureFile: 'id_rsa'
     - task: ArchiveFiles@2
-      displayName: 'Archive RestAPI'
+      displayName: 'Archive FakeRestAPI'
       inputs:
         rootFolderOrFile: './automatedtesting/jmeter/fakerestapi'
         includeRootFolder: false
@@ -63,7 +63,7 @@ stages:
        failTaskOnFailedTests: false
 - stage:
   jobs:
-  - deployment: RestAPI
+  - deployment: FakeRestAPI
     pool:
       vmImage: 'ubuntu-latest'
     environment: 'TEST'
