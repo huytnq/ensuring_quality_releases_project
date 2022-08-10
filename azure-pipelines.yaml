@@ -137,7 +137,7 @@ stages:
                 # Run selenium
                 
                 git clone https://github.com/huytnq/ensuring_quality_releases_project.git
-                cd udacity_project3_ensuring_quality_releases/
+                cd ensuring_quality_releases_project/
                 git pull
                 cd automatedtesting/selenium
                 python3 login.py
