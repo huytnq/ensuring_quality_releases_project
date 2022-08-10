@@ -120,6 +120,7 @@ stages:
               script: |
                 #! /bin/bash
                 
+                sudo add-apt-repository universe
                 sudo apt-get upgrade -y
                 sudo apt-get install python3 -y
                 sudo apt-get install python3-pip -y
