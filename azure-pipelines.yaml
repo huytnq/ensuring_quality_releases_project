@@ -63,7 +63,7 @@ stages:
        failTaskOnFailedTests: false
 - stage:
   jobs:
-  - deployment: FakeRestAPI
+  - deployment: RestAPI
     pool:
       vmImage: 'ubuntu-latest'
     environment: 'TEST'
