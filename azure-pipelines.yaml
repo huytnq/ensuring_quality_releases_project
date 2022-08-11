@@ -65,8 +65,8 @@ stages:
       displayName: 'Publish Test Results for postman'
       inputs:
        testResultsFormat: 'JUnit'
-       testResultsFiles: '**/*.xml'
-       mergeTestResults: true
+       testResultsFiles: '**/junit-report-*.xml'
+       mergeTestResults: false
        failTaskOnFailedTests: false
 - stage:
   jobs:
