@@ -1,0 +1,17 @@
+{
+	"info": {
+		"_postman_id": "7662e448-4cf2-4775-acf7-7ab453a3f523",
+		"name": "Data Validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

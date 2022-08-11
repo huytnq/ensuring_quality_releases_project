@@ -51,7 +51,14 @@ stages:
       displayName: Run Regression Tests
       continueOnError: true
       inputs:
-        script: 'newman run StarterAPIs.json  --reporters cli,junit --reporter-junit-export junit-report.xml'
+        script: 'newman run StarterAPIs.json  --reporters cli,junit --reporter-junit-export junit-report-regression.xml'
+
+        workingDirectory: './automatedtesting/postman'
+    - task: CmdLine@2
+      displayName: Run Data Validation Tests
+      continueOnError: true
+      inputs:
+        script: 'newman run ValidationTest.json  --reporters cli,junit --reporter-junit-export junit-report-validation.xml'
 
         workingDirectory: './automatedtesting/postman'
     - task: PublishTestResults@2

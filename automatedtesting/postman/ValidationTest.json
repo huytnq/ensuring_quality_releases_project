@@ -1,18 +1,18 @@
 {
 	"info": {
-		"_postman_id": "0be8554b-685c-4570-9b5a-523830647169",
+		"_postman_id": "7662e448-4cf2-4775-acf7-7ab453a3f523",
 		"name": "Starter APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Create Employee",
+			"name": "Get All Employees",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Create Employee endpoint Successful response\", function () {",
+							"pm.test(\"Found Employee with IDs 1\", function () {",
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
 							"});",
 							"var json = pm.response.json();",
@@ -23,24 +23,15 @@
 				}
 			],
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"{{name}}\",\n    \"salary\": \"{{salary}}\",\n    \"age\": \"{{age}}\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "https://web-appservice-web.azurewebsites.net/api/v1/create",
+					"raw": "https://web-appservice-web.azurewebsites.net/api/v1/employees",
 					"host": [
 						"https://web-appservice-web.azurewebsites.net"
 					],
 					"path": [
-						"api/v1/create"
+						"api/v1/employees"
 					]
 				}
 			},
@@ -53,7 +44,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Get All Employees endpoint successful response\", function () {",
+							"var expectedEmployees = 20;",
+							"pm.test(\"Total Employees found:\" + expectedEmployees, function () {",
 							"    pm.expect(pm.response.text()).to.include(\"success\");",
 							"});",
 							""
@@ -84,7 +76,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Update Employee endpoint response code is 200\", function () {",
+							"pm.test(\"Update Employee endpoint response as expected\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							""
@@ -115,7 +107,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Delete Employee endpoint response code is 200\", function () {",
+							"pm.test(\"Delete Employee endpoint response as expected\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							""
