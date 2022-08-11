@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from datetime import date
 
 def CustomPrint(message):
-    print (date.today().strftime("%b-%d-%Y %H:%M:%S") + ' (INFO): ' + message)
+    print (datetime.now() + ' (INFO): ' + message)
 
 # Start the browser and login with standard_user
 def login (user, password):
