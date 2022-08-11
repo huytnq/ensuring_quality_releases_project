@@ -76,6 +76,68 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Update Employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update Employee endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://web-appservice-web.azurewebsites.net/api/v1/employees",
+					"host": [
+						"https://web-appservice-web.azurewebsites.net"
+					],
+					"path": [
+						"api/v1/employees?name=TigerNixon&id=1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete Employee endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://web-appservice-web.azurewebsites.net/api/v1/employees",
+					"host": [
+						"https://web-appservice-web.azurewebsites.net"
+					],
+					"path": [
+						"api/v1/employees?id=1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
