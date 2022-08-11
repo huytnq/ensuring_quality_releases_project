@@ -1,3 +1,4 @@
+using fakerestapi.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace fakerestapi.Controllers
@@ -23,6 +24,18 @@ namespace fakerestapi.Controllers
         public IActionResult Post()
         {
             return Ok("{\"status\":\"success\",\"data\":{\"name\":\"{{name}}\",\"salary\":\"{{salary}}\",\"age\":\"{{age}}\",\"id\":2273},\"message\":\"Successfully!Recordhasbeenadded.\"}");
+        }
+
+        [HttpPut("api/v1/employees")]
+        public IActionResult Put(string name, int id)
+        {
+            return Ok();
+        }
+
+        [HttpDelete("api/v1/employees")]
+        public IActionResult Delete(int id)
+        {
+            return Ok();
         }
     }
 }
