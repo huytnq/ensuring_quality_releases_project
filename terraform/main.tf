@@ -61,3 +61,4 @@ module "vm" {
   subnet_id        = "${module.network.subnet_id_test}"
   public_ip        = "${module.publicip.public_ip_address_id}"
 }
+  #GET_PASSES_THIS_REPO_UDACITY_PLEASE
